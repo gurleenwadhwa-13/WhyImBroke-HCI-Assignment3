@@ -2,6 +2,7 @@
 export function renderNavbar() {
     return `
       <nav class="navbar">
+        <img src="assets/NavbarLogo.png" alt="Logo" class="navbar-logo">
         <ul class="navbar-list">
           <li class="navbar-item"><a href="/dashboard" class="navbar-link">Dashboard</a></li>
           <li class="navbar-item"><a href="/transactions" class="navbar-link">Transactions</a></li>
