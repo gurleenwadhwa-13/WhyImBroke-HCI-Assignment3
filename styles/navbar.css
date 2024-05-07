@@ -1,0 +1,51 @@
+/* Improved Navbar.css */
+
+.navbar {
+  background-color: #3498db; /* Blue background */
+  padding: 15px 20px; /* Add padding for spacing */
+  display: flex;
+  justify-content: flex-start; /* Align links to the left */
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 100%; /* Ensure it spans the full page width */
+}
+
+.navbar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Arrange items horizontally */
+}
+
+.navbar-item {
+  margin-right: 20px; /* Space between items */
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar-link:hover {
+  color: #f1c40f; /* Hover color (Yellow) */
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e74c3c;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
