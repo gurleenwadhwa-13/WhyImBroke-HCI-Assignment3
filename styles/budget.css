@@ -91,3 +91,25 @@ body {
     padding: 10px;
     color: #2ecc71;
 }
+
+.pie-chart-container, .alert-list-container {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.pie-chart-container canvas, .alert-list-container ul {
+    margin-top: 15px;
+}
+
+.alert-list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert-list-container li {
+    margin-bottom: 10px;
+}

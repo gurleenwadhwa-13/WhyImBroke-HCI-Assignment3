@@ -35,6 +35,16 @@ export function renderBudgetPage() {
 
       <button class="save-budget-button" id="save-budget">Save Settings</button>
       <div class="alert-message" id="alert-message"></div>
+
+      <div class="pie-chart-container">
+        <h2>Custom Alerts Breakdown</h2>
+        <canvas id="alertPieChart"></canvas>
+      </div>
+
+      <div class="alert-list-container">
+        <h2>Custom Alerts List</h2>
+        <ul id="alert-list"></ul>
+      </div>
     </div>
   `;
 
@@ -49,25 +59,50 @@ export function renderBudgetPage() {
       const value = document.getElementById(inputId).value;
       return {
         category,
-        threshold: value || "not set"
+        threshold: value || "0"
       };
     });
 
+    // Update the pie chart
+    const pieChartData = customAlerts.map(alert => parseInt(alert.threshold) || 0);
+    updatePieChart(pieChartData);
+
+    // Update the custom alerts list
+    const alertList = document.getElementById("alert-list");
+    alertList.innerHTML = customAlerts.map(alert => `
+      <li>${alert.category}: ${alert.threshold}% of budget</li>
+    `).join('');
+
     // Validate and save the budget settings
     if (budgetValue && alertThreshold) {
-      let alertDetails = `
+      alertMessage.innerHTML = `
         <p>Budget saved successfully!</p>
         <p>Alert will trigger at ${alertThreshold}% of a $${budgetValue} budget.</p>
-        <ul>
       `;
-      customAlerts.forEach(alert => {
-        alertDetails += `<li>${alert.category}: ${alert.threshold}% of budget</li>`;
-      });
-      alertDetails += `</ul>`;
-
-      alertMessage.innerHTML = alertDetails;
     } else {
       alertMessage.innerHTML = "<p>Please fill out all required fields.</p>";
     }
   });
+
+  // Initialize the pie chart
+  createPieChart();
+}
+
+function createPieChart() {
+  const pieCtx = document.getElementById("alertPieChart").getContext("2d");
+  window.alertPieChart = new Chart(pieCtx, {
+    type: "pie",
+    data: {
+      labels: ['Food & Dining', 'Transport', 'Utilities', 'Entertainment'],
+      datasets: [{
+        data: [0, 0, 0, 0],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50']
+      }]
+    }
+  });
+}
+
+function updatePieChart(data) {
+  window.alertPieChart.data.datasets[0].data = data;
+  window.alertPieChart.update();
 }
