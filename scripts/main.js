@@ -4,6 +4,7 @@ import { renderSignUpPage } from "./signup.js";
 import { renderTransactionsPage } from "./transactions.js";
 import { renderSpendingPatternsPage } from "./patterns.js";
 import { renderBudgetPage } from "./budget.js";
+import { renderReportsPage } from "./reports.js";
 
 // Route paths and their corresponding functions
 const routes = {
@@ -12,7 +13,8 @@ const routes = {
   "/signup": renderSignUpPage,
   "/transactions": renderTransactionsPage,
   "/patterns": renderSpendingPatternsPage,
-  "/budget":renderBudgetPage
+  "/budget":renderBudgetPage,
+  "/reports": renderReportsPage
 };
 
 function navigateTo(path) {
