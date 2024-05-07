@@ -59,7 +59,6 @@ export function renderDashboardPage() {
   app.innerHTML = `
     ${renderNavbar()}
     <div class="dashboard-container">
-      <button class="logout-button" id="logout">Logout</button>
       <h1>Link Your Account</h1>
       ${mainContent}
     </div>

@@ -6,6 +6,8 @@ export function renderNavbar() {
           <li class="navbar-item"><a href="/dashboard" class="navbar-link">Dashboard</a></li>
           <li class="navbar-item"><a href="/transactions" class="navbar-link">Transactions</a></li>
           <li class="navbar-item"><a href="/patterns" class="navbar-link">Spending Patterns</a></li>
+          <li class="navbar-item"><a href="/budget" class="navbar-link">Budget</a></li>
+      </ul>
         </ul>
         <button class="logout-button" id="logout">Logout</button>
       </nav>

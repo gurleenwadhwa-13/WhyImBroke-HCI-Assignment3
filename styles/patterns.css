@@ -25,7 +25,11 @@ body {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     margin: 0 10px;
-    max-width: 300px;
+    width: 300px; /* Set a fixed width */
+    height: 400px; /* Set a fixed height */
+    display: flex; /* Added for vertical alignment */
+    flex-direction: column; /* Added for vertical alignment */
+    justify-content: space-between; /* Added for vertical alignment */
 }
 
 canvas {

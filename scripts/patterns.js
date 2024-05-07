@@ -16,7 +16,7 @@ export function renderSpendingPatternsPage() {
   app.innerHTML = `
     ${renderNavbar()}
     <div class="heading-container">
-      <h1>This Month ></h1>
+      <h2>This Month</h2>
     </div>
     <div class="patterns-container">
       <div class="pattern-row">
@@ -38,7 +38,7 @@ export function renderSpendingPatternsPage() {
         <div class="pattern-item">
           <h2>Top Transactions</h2>
           <ul id="transactionList"></ul>
-          <p>Using ML to categorize transactions</p>
+          <p>For Future use: ML to categorize transactions</p>
         </div>
       </div>
       <button class="back-button" id="back-to-dashboard">Back to Dashboard</button>
